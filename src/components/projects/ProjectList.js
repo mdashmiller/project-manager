@@ -1,12 +1,11 @@
 import React from 'react'
 import ProjectSummary from './ProjectSummary'
 
-const ProjectList = () =>
+const ProjectList = ({ projects }) =>
 	<div className="section project-list">
-		<ProjectSummary />
-		<ProjectSummary />
-		<ProjectSummary />
-		<ProjectSummary />
+		{ projects && projects.map(project =>
+			<ProjectSummary project={project} key={project.id} />
+		) }
 	</div>
 
 export default ProjectList
